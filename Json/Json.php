@@ -1,6 +1,6 @@
 <?php
 
-namespace Zeroem\Json;
+namespace Zeroem\JsonBundle\Json;
 
 class Json implements JsonInterface
 {
@@ -36,17 +36,6 @@ class Json implements JsonInterface
     public function setDecoder(DecoderInterface $decoder) {
         $this->decoder = $decoder;
         return $this;
-    }
-
-
-    public function encode($data, $flags=0) {
-        $result = json_encode($data, $flags);
-
-        if(false === $result) {
-            throw new \RuntimeException(self::errorToString(json_last_error()));
-        }
-
-        return $result;
     }
 
     public static function errorToString($error) {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Zeroem\Json;
+namespace Zeroem\JsonBundle\Json;
 
-interface JsonInterface {
+interface JsonBundle\JsonInterface {
     /**
      * Encode the given data to a JSON string
      *

@@ -1,6 +1,6 @@
 <?php
 
-namespace Zeroem\Json;
+namespace Zeroem\JsonBundle\Json;
 
 class Encoder implements EncoderInterface
 {
