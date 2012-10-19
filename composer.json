@@ -12,6 +12,7 @@
             "email": "darrell.noice@gmail.com"
         }
     ],
+    "target-dir": "Zeroem/JsonBundle",
     "require": {
 
     },
