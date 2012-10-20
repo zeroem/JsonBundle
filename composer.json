@@ -12,12 +12,11 @@
             "email": "darrell.noice@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-0": { "Zeroem\\JsonBundle": "" }
+    },
     "target-dir": "Zeroem/JsonBundle",
     "require": {
 
-    },
-
-    "require-dev": {
-        "phpunit/phpunit": "dev-master"
     }
 }

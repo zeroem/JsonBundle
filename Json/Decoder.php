@@ -6,16 +6,20 @@ class Decoder implements DecoderInterface
 {
     private $flags=0;
     private $decodeToArray=false;
-    private $depth;
+    private $depth=512;
 
     public function __construct($decodeToArray=false, $depth=512, $flags=0) {
         $this->flags = $flags;
         $this->decodeToArray = $decodeToArray;
-        $this->depth = $this->setDepth($depth);
+        $this->setDepth($depth);
     }
 
     public function decode($data) {
-        $result = json_decode($data, $this->decodeToArray, $this->depth, $this->flags);
+        if(version_compare(PHP_VERSION, '5.4.0') >= 0) {
+            $result = json_decode($data, $this->decodeToArray, $this->depth, $this->flags);
+        } else {
+            $result = json_decode($data, $this->decodeToArray, $this->depth);
+        }
 
         if(null === $result) {
             $error = json_last_error();
@@ -43,7 +47,7 @@ class Decoder implements DecoderInterface
     }
 
     public function removeFlags($flags) {
-        $this->flags = (^ $flags) & $this->flags;
+        $this->flags = (~ $flags) & $this->flags;
         return $this;
     }
 
