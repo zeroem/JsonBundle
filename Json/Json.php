@@ -1,5 +1,4 @@
-<?php
-
+<?php 
 namespace Zeroem\JsonBundle\Json;
 
 class Json implements JsonInterface
@@ -7,7 +6,15 @@ class Json implements JsonInterface
     private $encoder;
     private $decoder;
 
-    public function __construct(EncoderInterface $encoder, DecoderInterface $decoder) {
+    public function __construct(EncoderInterface $encoder=null, DecoderInterface $decoder=null) {
+        if(is_null($encoder)) {
+            $encoder = new Encoder;
+        }
+
+        if(is_null($decoder)) {
+            $decoder = new Decoder;
+        }
+
         $this->encoder = $encoder;
         $this->decoder = $decoder;
     }
