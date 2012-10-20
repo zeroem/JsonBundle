@@ -1,6 +1,7 @@
 {
     "name": "zeroem/json-bundle",
     "description": "Configurable JSON encoder/decoder service",
+    "license": "MIT",
     "type": "symfony-bundle",
     "require-dev": {
         "phpunit/phpunit": "3.7.8"
