@@ -20,24 +20,6 @@ class Json implements JsonInterface
         return $this->decoder->decode($data);
     }
 
-    public function getEncoder() {
-        return $this->encoder;
-    }
-
-    public function setEncoder(EncoderInterface $encoder) {
-        $this->encoder = $encoder;
-        return $this;
-    }
-
-    public function getDecoder() {
-        return $this->decoder;
-    }
-
-    public function setDecoder(DecoderInterface $decoder) {
-        $this->decoder = $decoder;
-        return $this;
-    }
-
     public static function errorToString($error) {
         switch ($error) {
         case JSON_ERROR_NONE:
@@ -64,6 +46,24 @@ class Json implements JsonInterface
         }
 
         return $message;
+    }
+
+    public function getEncoder() {
+        return $this->encoder;
+    }
+
+    public function setEncoder(EncoderInterface $encoder) {
+        $this->encoder = $encoder;
+        return $this;
+    }
+
+    public function getDecoder() {
+        return $this->decoder;
+    }
+
+    public function setDecoder(DecoderInterface $decoder) {
+        $this->decoder = $decoder;
+        return $this;
     }
 }
 
