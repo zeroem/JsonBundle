@@ -1,0 +1,17 @@
+parameters:
+    zeroem.json_encoder.class: Zeroem\JsonBundle\Json\Encoder
+    zeroem.json_decoder.class: Zeroem\JsonBundle\Json\Decoder
+    json.class: Zeroem\JsonBundle\Json\Json
+
+services:
+    zeroem.json_encoder:
+        class: %zeroem.json_encoder.class%
+
+    zeroem.json_decoder:
+        class: %zeroem.json_decoder.class%
+
+    json:
+       class: %json.class%
+       arguments:
+         - @zeroem.json_encoder
+         - @zeroem.json_decoder
